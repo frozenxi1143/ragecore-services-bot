@@ -53,14 +53,18 @@ async def setupverify(interaction: discord.Interaction):
         color=discord.Color.dark_gray()
     )
 
-    file = discord.File("ragecore_logo.png", filename="ragecore_logo.png")
+    embed.set_thumbnail(
+        url="https://raw.githubusercontent.com/frozenxi1143/ragecore-services-bot/main/ragecore_logo.png"
+    )
 
-embed.set_thumbnail(url="https://raw.githubusercontent.com/frozenxi1143/ragecore-services-bot/main/ragecore_logo.png")
+    await interaction.channel.send(
+        embed=embed,
+        view=VerifyButton()
+    )
 
-await interaction.channel.send(
-    embed=embed,
-    view=view,
-    file=file
-)
+    await interaction.response.send_message(
+        "Verification system setup complete.",
+        ephemeral=True
+    )
 
 bot.run(TOKEN)
