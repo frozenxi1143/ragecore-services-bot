@@ -53,11 +53,14 @@ async def setupverify(interaction: discord.Interaction):
         color=discord.Color.dark_gray()
     )
 
-    embed.set_thumbnail(url="https://i.imgur.com/4M34hi2.png")
+    file = discord.File("ragecore_logo.png", filename="ragecore_logo.png")
 
-    await interaction.response.send_message(
-        embed=embed,
-        view=VerifyButton()
-    )
+embed.set_thumbnail(url="attachment://ragecore_logo.png")
+
+    await channel.send(
+    embed=embed,
+    view=view,
+    file=file
+)
 
 bot.run(TOKEN)
