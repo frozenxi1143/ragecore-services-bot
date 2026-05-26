@@ -55,7 +55,7 @@ async def setupverify(interaction: discord.Interaction):
 
     file = discord.File("ragecore_logo.png", filename="ragecore_logo.png")
 
-embed.set_thumbnail(url="attachment://ragecore_logo.png")
+embed.set_thumbnail(url="https://raw.githubusercontent.com/frozenxi1143/ragecore-services-bot/main/ragecore_logo.png")
 
 await interaction.channel.send(
     embed=embed,
